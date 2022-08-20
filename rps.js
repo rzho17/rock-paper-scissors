@@ -11,6 +11,9 @@ let computer = getComputerChoice();
 let computerScore = 0;
 let playerScore = 0;
 
+let pWin = 0;
+let cWin = 0;
+
 function playerSelection(){
     let playerChoice = prompt("Enter your choice: Rock, Paper, or Scissors").toLowerCase();
 
@@ -82,27 +85,29 @@ function game(){
     //set a win counter
     // who ever has more wins in 5 loops in the winner = winner
     //loop the playround function 5 times
-    for (let index = 1; index < 5; index++) {
+    for (let index = 0; index < 5; index++) {
         playRound(player, computer);
         console.log(playerScore);
         console.log(computerScore);
-        player = playerSelection();
-        computer = getComputerChoice();
+        if (index != 4){
+            player = playerSelection();
+            computer = getComputerChoice();
+        }
     }
-
-    
 
     if (playerScore > computerScore){
         console.log("Player wins!");
-        console.log("finale score player: " + playerScore + " computer :" + computerScore);
+        console.log("final score player: " + playerScore + " computer : " + computerScore);
     }else if (computerScore > playerScore){
         console.log("computer wins!");
-        console.log("finale score player: " + playerScore + " computer :" + computerScore);
+        console.log("final score player: " + playerScore + " computer : " + computerScore);
     }else {
-        console.log("It's a tie!")
-        console.log("finale score player: " + playerScore + " computer :" + computerScore);
+        console.log("It's a tie! Let's play a tie breaker!")
+        player = playerSelection();
+        computer = getComputerChoice();
+        playRound(player,computer);
+        console.log("final score player: " + playerScore + " computer : " + computerScore);
     }
 }
-// console.log(playRound(player,computer));
 
 game();
