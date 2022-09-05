@@ -14,8 +14,9 @@ let playerScore = 0;
 let pWin = 0;
 let cWin = 0;
 
-function playerSelection(){
-    let playerChoice = prompt("Enter your choice: Rock, Paper, or Scissors").toLowerCase();
+function playerSelection(choice){
+    // let playerChoice = prompt("Enter your choice: Rock, Paper, or Scissors").toLowerCase();
+    let playerChoice = choice;
 
     if (playerChoice === rock){
         console.log("rock");
@@ -85,7 +86,8 @@ function game(){
     //set a win counter
     // who ever has more wins in 5 loops in the winner = winner
     //loop the playround function 5 times
-    for (let index = 0; index < 5; index++) {
+    
+    /*for (let index = 0; index < 5; index++) {
         playRound(player, computer);
         console.log(playerScore);
         console.log(computerScore);
@@ -93,7 +95,7 @@ function game(){
             player = playerSelection();
             computer = getComputerChoice();
         }
-    }
+    } */
 
     if (playerScore > computerScore){
         console.log("Player wins!");
@@ -110,4 +112,21 @@ function game(){
     }
 }
 
-game();
+const rockBtn = document.querySelector('.rock');
+rockBtn.addEventListener('click', () => {
+    playerSelection("rock");
+    getComputerChoice();
+});
+
+const paperBtn = document.querySelector('.paper');
+paperBtn.addEventListener('click', () => {
+    playerSelection("paper");
+    getComputerChoice();
+});
+
+const sciBtn = document.querySelector('.scissors');
+sciBtn.addEventListener('click', () => {
+    playerSelection("scissors");
+    getComputerChoice();
+});
+// game();
