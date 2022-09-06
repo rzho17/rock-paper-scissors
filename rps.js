@@ -17,21 +17,17 @@ let pWin = 0;
 let cWin = 0;
 
 const score = document.querySelector('#score');
-const playerScoreUpdate = document.querySelector('player');
-const compScoreUpdate = document.querySelector('computer');
+const playerScoreUpdate = document.querySelector('.player');
+const compScoreUpdate = document.querySelector('.computer');
 
 function playerSelection(choice){
-    // let playerChoice = prompt("Enter your choice: Rock, Paper, or Scissors").toLowerCase();
     let playerChoice = choice;
 
     if (playerChoice === rock){
-        // console.log("rock");
         return 0;
     } else if (playerChoice === paper){
-        // console.log("paper");
         return 1;
     } else {
-        // console.log("scissors");
         return 2;
     }
 }
@@ -39,13 +35,10 @@ function playerSelection(choice){
 function getComputerChoice(){
     const computerChoice = Math.floor(Math.random() * 3);
     if (computerChoice === 0){
-        // console.log("rock");
         return 0;
     } else if (computerChoice === 1){
-        // console.log("paper");
         return 1;
     } else {
-        // console.log("scissors");
         return 2;
     }
 }
@@ -56,30 +49,42 @@ function playRound(player, computer) {
     } // rock beats scissors 
     else if (player === 0 && computer === 2){
         score.textContent = "Player chose rock, computer chose scissors. You win!";
+        playerScoreUpdate.textContent ="Player score: ";
+        playerScoreUpdate.textContent += playerScore;
         return playerScore += 1;
     } //vice versa
     else if (player === 2 && computer === 0){
         score.textContent = "Computer chose rock, you lose!";
+        compScoreUpdate.textContent = "Computer score: ";
+        compScoreUpdate.textContent += computerScore;
         return computerScore += 1;
     }
     //paper beats rock
     else if (player === 1 && computer === 0){
         score.textContent = "Player chose paper, computer chose rock. You win!";
+        playerScoreUpdate.textContent ="Player score: ";
+        playerScoreUpdate.textContent += playerScore;
         return playerScore += 1;
     }
     // vice versa
     else if (player === 0 && computer === 1){
         score.textContent = "Computer chose paper, you lose!";
+        compScoreUpdate.textContent = "Computer score: ";
+        compScoreUpdate.textContent += computerScore;
         return computerScore += 1;
     }
     //scissors beats paper
     else if (player === 2 && computer === 1){
         score.textContent = "Player chose scissors, computer chose paper. You win!";
+        playerScoreUpdate.textContent ="Player score: ";
+        playerScoreUpdate.textContent += playerScore;
         return playerScore += 1;
     }
     // vice versa
     else if (player === 1 && computer === 2){
         score.textContent = "Computer chose scissors, you lose!";
+        compScoreUpdate.textContent = "Computer score: ";
+        compScoreUpdate.textContent += computerScore;
         return computerScore += 1;
     }
 }
