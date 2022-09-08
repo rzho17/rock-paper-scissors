@@ -10,8 +10,8 @@ let playerPaper = playerSelection("paper");
 let playerScissors = playerSelection("scissors");
 let computer = getComputerChoice();
 
-let computerScore = 0;
-let playerScore = 0;
+let computerScore = 1;
+let playerScore = 1;
 
 let pWin = 0;
 let cWin = 0;
@@ -19,6 +19,7 @@ let cWin = 0;
 const score = document.querySelector('#score');
 const playerScoreUpdate = document.querySelector('.player');
 const compScoreUpdate = document.querySelector('.computer');
+
 
 function playerSelection(choice){
     let playerChoice = choice;
@@ -87,57 +88,53 @@ function playRound(player, computer) {
         compScoreUpdate.textContent += computerScore;
         return computerScore += 1;
     }
-}
-
-
-function game(){
-    // call playround
-    //set a win counter
-    // who ever has more wins in 5 loops in the winner = winner
-    //loop the playround function 5 times
     
-    /*for (let index = 0; index < 5; index++) {
-        playRound(player, computer);
-        console.log(playerScore);
-        console.log(computerScore);
-        if (index != 4){
-            player = playerSelection();
-            computer = getComputerChoice();
-        }
-    } */
-
-    if (playerScore > computerScore){
-        console.log("Player wins!");
-        console.log("final score player: " + playerScore + " computer : " + computerScore);
-    }else if (computerScore > playerScore){
-        console.log("computer wins!");
-        console.log("final score player: " + playerScore + " computer : " + computerScore);
-    }else {
-        console.log("It's a tie! Let's play a tie breaker!")
-        player = playerSelection();
-        computer = getComputerChoice();
-        playRound(player,computer);
-        console.log("final score player: " + playerScore + " computer : " + computerScore);
-    }
 }
 
 const rockBtn = document.querySelector('.rock');
 rockBtn.addEventListener('click', () => {
     playRound(playerRock, computer);
-    playerRock = playerSelection("rock");
     computer = getComputerChoice();
-    
+    scoreDisable();
 });
 
 const paperBtn = document.querySelector('.paper');
 paperBtn.addEventListener('click', () => {
     playRound(playerPaper, computer);
     computer = getComputerChoice();
+    scoreDisable();
 });
 
 const sciBtn = document.querySelector('.scissors');
 sciBtn.addEventListener('click', () => {
     playRound(playerScissors, computer);
     computer = getComputerChoice();
+    scoreDisable();
 });
+
+scoreDisable = () => {
+    if(playerScore === 4 || computerScore === 4){
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        sciBtn.disabled = true;
+        
+        if(playerScore > computerScore){
+            score.textContent = "You have won the match! Press reset to play again!";
+        }else{
+            score.textContent = "You lost! Press reset to play again!";
+        }
+    }
+
+}
+
+const reset = document.querySelector('#reset');
+reset.addEventListener('click', () => {
+    rockBtn.disabled = false;
+    paperBtn.disabled = false;
+    sciBtn.disabled = false;
+    playerScoreUpdate.textContent = "Player score: ";
+    compScoreUpdate.textContent = "Computer score: ";
+    playerScore = 1;
+    computerScore =1;
+})
 // game();
