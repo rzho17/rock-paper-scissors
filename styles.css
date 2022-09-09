@@ -1,0 +1,40 @@
+body {
+    background-color: #F5EDDC;
+    font-family: 'Courier New', monospace;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gameBox {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 750px;
+    justify-content: space-between;
+
+    border: 1px solid;
+}
+
+.playerBox, .computerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+
+    border: 5px solid rebeccapurple;
+}
+
+.computerBox {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.rock, .paper, .scissors {
+    height: 150px;
+    width: 150px;
+}

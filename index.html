@@ -3,28 +3,44 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Rock Paper Scissors</h1>
-
-        <div class="main">
-            <button class="rock">ROCK</button>
-            <button class="paper">PAPER</button>
-            <button class="scissors">SCISSORS</button>
-        </div>
-
-        <div id="score"></div>
-
-        <div class="display">
-            <div class="player">
-                Player Score:
-            </div>
-            <div class="computer">
-                Computer Score
-            </div>
-        </div>
         
-        <button id="reset">RESET</button>
+        <div id="main">
+            <h1>Rock Paper Scissors</h1>
+
+            <div class="gameBox">
+                <div class="playerBox">
+                    <input type="image" src="/images/stone.png" class="rock">
+                    <input type="image" src="/images/paper.png" class="paper">
+                    <input type="image" src="/images/scissors.png" class="scissors">
+                </div>
+
+                <div id="score"></div>
+
+                <div class="display">
+                    <div class="player">
+                        Player Score:
+                    </div>
+                    <div class="computer">
+                        Computer Score
+                    </div>
+                </div>
+
+                <div class="computerBox">
+                    <img class ="rock" src="/images/stone.png" alt="rock">
+                    <img class ="paper" src="/images/paper.png" alt="paper">
+                    <img class ="scissors" src="/images/scissors.png" alt="scissors">
+                </div>
+                
+
+                
+            </div>
+            
+            <button id="reset">RESET</button>
+
+            </div>
 
         <script src="rps.js"></script>
 
