@@ -134,6 +134,7 @@ reset.addEventListener('click', () => {
     sciBtn.disabled = false;
     playerScoreUpdate.textContent = "Player score: ";
     compScoreUpdate.textContent = "Computer score: ";
+    score.textContent = "Select your choice!"
     playerScore = 1;
     computerScore =1;
 })

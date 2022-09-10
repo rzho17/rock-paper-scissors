@@ -12,7 +12,7 @@ body {
 .gameBox {
     display: flex;
     flex-direction: row;
-    height: 500px;
+    /* height: 500px; */
     width: 750px;
     justify-content: space-between;
 
@@ -37,4 +37,26 @@ body {
 .rock, .paper, .scissors {
     height: 150px;
     width: 150px;
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+    display: flex;
+    align-self: flex-start;
+    max-width: max-content;
+}
+
+#score {
+    text-align: center;
+}
+
+.computer {
+    display: flex;
+    align-self: flex-end;
+    max-width: min-content;
 }
