@@ -134,7 +134,7 @@ reset.addEventListener('click', () => {
     sciBtn.disabled = false;
     playerScoreUpdate.textContent = "Player score: ";
     compScoreUpdate.textContent = "Computer score: ";
-    score.textContent = "Select your choice!"
+    score.textContent = "Welcome to Rock,Paper, Scissors. Select a choice on the left to play!";
     playerScore = 1;
     computerScore =1;
 })

@@ -16,7 +16,6 @@ body {
     width: 750px;
     justify-content: space-between;
 
-    border: 1px solid;
 }
 
 .playerBox, .computerBox {
@@ -24,8 +23,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 5px;
+    margin: 1em;
+    border-radius: 1em;
 
-    border: 5px solid rebeccapurple;
 }
 
 .computerBox {
@@ -43,6 +43,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 5px solid black;
+    border-radius: 1em;
 }
 
 .player {
@@ -53,10 +55,40 @@ body {
 
 #score {
     text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    max-width: max-content;
 }
 
 .computer {
     display: flex;
     align-self: flex-end;
     max-width: min-content;
+}
+
+.player, .computer, .footer {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#reset {
+    font-size: larger;
+    font-weight: bolder;
+    background-color: #CFD2CF;
+    height: 100px;
+    width: 150px;
+    margin: 2em;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Creates footer to stay the width of page */
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 100px;
+    width: 100%;
+    background-color: #CFD2CF; 
 }
