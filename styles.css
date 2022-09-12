@@ -82,8 +82,6 @@ body {
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
     /* Creates footer to stay the width of page */
     position: fixed;
     left: 0;
@@ -91,5 +89,6 @@ body {
     height: 100px;
     width: 100%;
     padding: 20px;
+    text-align: center;
     background-color: #CFD2CF; 
 }
