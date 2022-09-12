@@ -12,7 +12,6 @@ body {
 .gameBox {
     display: flex;
     flex-direction: row;
-    /* height: 500px; */
     width: 750px;
     justify-content: space-between;
 
@@ -45,6 +44,7 @@ body {
     align-items: center;
     border: 5px solid black;
     border-radius: 1em;
+    padding: 1em;
 }
 
 .player {
@@ -78,6 +78,7 @@ body {
     height: 100px;
     width: 150px;
     margin: 2em;
+    border-radius: 1em;
 }
 
 .footer {
